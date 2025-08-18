@@ -1,5 +1,5 @@
 import os
-from manim import *
+from manimlib import *
 from manim_voiceover import VoiceoverScene
 from manim_voiceover.services.gtts import GTTSService
 from manim_voiceover.translate import get_gettext

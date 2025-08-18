@@ -2,7 +2,7 @@ from pathlib import Path
 from manim_voiceover.helper import msg_box, prompt_ask_missing_extras, remove_bookmarks
 
 from manim_voiceover.services.base import SpeechService
-from manim import logger
+from manimlib import logger
 
 try:
     import pyaudio

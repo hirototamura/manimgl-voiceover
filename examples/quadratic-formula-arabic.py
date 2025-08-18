@@ -2,7 +2,7 @@
 # License: MIT (see LICENSE for details)
 # Rendered version: https://www.youtube.com/watch?v=Sflx0aoFrVg
 
-from manim import *
+from manimlib import *
 from pathlib import Path
 import os
 from numpy import left_shift
@@ -18,10 +18,11 @@ RESOLUTION = ""
 FLAGS = (
     f"-pqk -o ar_formule_quadratique_logo2 --disable_caching"  # "-pql --fps 10 -n 39 "
 )
-pixel_height = config["pixel_height"]  #  1080 is default
-pixel_width = config["pixel_width"]  # 1920 is default
-frame_width = config["frame_width"]
-frame_height = config["frame_height"]
+# ManimGL stores resolution inside the camera configuration
+pixel_width, pixel_height = config["camera"]["resolution"]
+# Scene geometry parameters are defined under "sizes"
+frame_height = config["sizes"]["frame_height"]
+frame_width = frame_height * pixel_width / pixel_height
 
 dims = {
     "h": (1920, 1080)
@@ -29,7 +30,7 @@ dims = {
 }
 # ------ إضافة/إزالة Mobject للـمشهد
 
-# config["background_color"] = None#"#0f1653"
+# config["camera"]["background_color"] = None#"#0f1653"
 # config["max_files_cached"] = 200
 # تحديد مكان الشيء في المشهد
 SCENE = "test1"  #  ضع اسم المشهد هنا
@@ -40,7 +41,7 @@ if __name__ == "__main__":
     os.system(f"manim {script_name} {SCENE} {FLAGS}")
 
 
-config.background_color = "#e0e6e2"  # None #
+config["camera"]["background_color"] = "#e0e6e2"  # None #
 Tex.set_default(color=BLACK)
 Text.set_default(color=BLACK)
 Mobject.set_default(color=RED)
@@ -48,7 +49,7 @@ Dot.set_default(color=BLACK)
 VMobject.set_default(color=BLACK, stroke_width=4)
 Square.set_default(color=GREEN)
 
-main_tex = config.tex_template
+main_tex = config["tex"]["template"]
 
 r_preamble = r"""
 \usepackage[T2A]{fontenc}
@@ -131,7 +132,7 @@ class QuadraticFormulaArabic(VoiceoverScene):
         # print(len(title))
         fs = 75
         arfs = 120
-        config.tex_template = main_tex
+        config["tex"]["template"] = main_tex
         # You can specify which tex file to use
         # for example Tex("balbalbla", tex_template = my_template)
         # eq5

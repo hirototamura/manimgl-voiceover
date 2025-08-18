@@ -117,13 +117,12 @@ def main():
         os.environ["LOCALE"] = locale
         ofile = scene + "_" + locale + ".mp4"
         cmd = [
-            "manim",
+            "manimgl",
             f"-q{quality}",
             file,
             scene,
             "-o",
             ofile,
-            "--disable_caching",
         ]
 
         # Run manim with the command

@@ -3,7 +3,7 @@ import sys
 from pathlib import Path
 
 from dotenv import find_dotenv, load_dotenv
-from manim import logger
+from manimlib import logger
 
 from manim_voiceover.helper import (
     create_dotenv_file,

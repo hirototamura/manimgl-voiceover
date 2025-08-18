@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import List, Optional, Union
 
 from dotenv import find_dotenv, load_dotenv
-from manim import logger
+from manimlib import logger
 
 from manim_voiceover.helper import create_dotenv_file, remove_bookmarks
 from manim_voiceover.services.base import SpeechService

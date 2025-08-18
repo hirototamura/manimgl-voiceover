@@ -5,7 +5,8 @@ import json
 import sys
 import hashlib
 from pathlib import Path
-from manim import config, logger
+from manimlib.config import manim_config as config
+from manimlib import logger
 from slugify import slugify
 from manim_voiceover.defaults import (
     DEFAULT_VOICEOVER_CACHE_DIR,
@@ -72,7 +73,9 @@ class SpeechService(ABC):
         if cache_dir is not None:
             self.cache_dir = cache_dir
         else:
-            self.cache_dir = Path(config.media_dir) / DEFAULT_VOICEOVER_CACHE_DIR
+            self.cache_dir = (
+                Path(config["directories"]["sounds"]) / DEFAULT_VOICEOVER_CACHE_DIR
+            )
 
         if not os.path.exists(self.cache_dir):
             os.makedirs(self.cache_dir)

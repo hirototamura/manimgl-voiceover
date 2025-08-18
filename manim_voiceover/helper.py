@@ -8,7 +8,7 @@ import pip
 import textwrap
 from pydub import AudioSegment
 from pathlib import Path
-from manim import logger
+from manimlib import logger
 
 
 def chunks(lst: list, n: int):

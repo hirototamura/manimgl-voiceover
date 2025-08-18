@@ -1,4 +1,4 @@
-from manim import *
+from manimlib import *
 import pygments.styles as code_styles
 from manim_voiceover import VoiceoverScene
 

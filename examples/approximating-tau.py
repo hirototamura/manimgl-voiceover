@@ -3,7 +3,7 @@
 # Rendered version: https://www.youtube.com/watch?v=xmHzyafJEec
 # Taken from: https://github.com/NutronStar45/manim-videos/blob/main/2022/09/approx_tau.py
 
-from manim import *
+from manimlib import *
 from numpy import sqrt, sin, cos
 from manim_voiceover import VoiceoverScene
 from manim_voiceover.services.azure import AzureService

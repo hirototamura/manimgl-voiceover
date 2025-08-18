@@ -4,7 +4,7 @@ import typing as t
 
 import subprocess
 
-from manim import logger
+from manimlib import logger
 
 from manim_voiceover.helper import prompt_ask_missing_extras
 
