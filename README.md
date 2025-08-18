@@ -9,3 +9,9 @@ Install directly from GitHub:
 ```bash
 pip install git+https://github.com/azhuchkov/manim-voiceover.git
 ```
+
+Install package extension (for example, `azure`):
+
+```bash
+pip install "git+https://github.com/azhuchkov/manim-voiceover.git#egg=manim-voiceover[azure]"
+```
