@@ -7,11 +7,11 @@ This repository is a port of the original [Manim Voiceover](https://github.com/M
 Install directly from GitHub:
 
 ```bash
-pip install git+https://github.com/azhuchkov/manim-voiceover.git
+pip install git+https://github.com/hirototamura/manimgl-voiceover.git
 ```
 
 Install package extension (for example, `azure`):
 
 ```bash
-pip install "git+https://github.com/azhuchkov/manim-voiceover.git#egg=manim-voiceover[azure]"
+pip install "git+https://github.com/hirototamura/manimgl-voiceover.git#egg=manim-voiceover[azure]"
 ```
