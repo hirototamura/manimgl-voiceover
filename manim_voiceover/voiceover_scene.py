@@ -79,8 +79,10 @@ class VoiceoverScene(Scene):
 
         dict_ = self.speech_service._wrap_generate_from_text(text, **kwargs)
         tracker = VoiceoverTracker(self, dict_, self.speech_service.cache_dir)
-        # Restore the scene's animation skipping state before playing audio
-        self.skip_animations = self.original_skipping_status
+        # Restore the scene's animation skipping state before playing audio,
+        # but preserve skipping when using -n until the target index is reached.
+        if getattr(self, "start_at_animation_number", None) is None or not self.skip_animations:
+            self.skip_animations = self.original_skipping_status
         self.add_sound(str(Path(self.speech_service.cache_dir) / dict_["final_audio"]))
         self.current_tracker = tracker
 
